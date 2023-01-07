@@ -19,6 +19,8 @@ enum
 	EXIT
 };
 
+
+
 // GLOBALS
 std::vector<std::string> original; // constant
 std::vector<std::string> types;
@@ -95,7 +97,11 @@ std::string PickFood()
 void MainMenu() 
 {
 	int menuChoice = 0;
+
+#ifndef NDEBUG
 	std::string filepath = "foodcategories.txt";
+#endif
+	std::string filepath = "../SaveData/foodcategories.txt";
 
 	// Resize window
 	RECT rect; // stores console's current dimensions
@@ -361,7 +367,10 @@ void TextPrompt(const char *_msg, char *&_text)
 // Save categories to a new text file
 void SaveList()
 {
+#ifndef NDEBUG
 	std::string fileName("foodcategories.txt");
+#endif
+	std::string fileName("../SaveData/foodcategories.txt");
 	std::string line;
 	std::ofstream file;
 
