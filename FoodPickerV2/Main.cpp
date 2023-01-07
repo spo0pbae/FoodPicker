@@ -42,8 +42,6 @@ enum
 	EXIT
 };
 
-
-
 // GLOBALS
 std::vector<std::string> original; // constant
 std::vector<std::string> types;
